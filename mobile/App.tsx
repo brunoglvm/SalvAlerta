@@ -1,48 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native';
-import Map, {Callout, Marker} from "react-native-maps";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "@/screens/Home";
+import Start from "@/screens/Start";
 
-const coordinate = {
-  latitude: -12.969717954906338,
-  longitude: -38.51277131734317,
-}
-//,
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Map
-          style={StyleSheet.absoluteFill}
-          initialRegion={{
-            latitude: coordinate.latitude,
-            longitude: coordinate.longitude,
-            latitudeDelta: 0.005,
-            longitudeDelta: 0.005,
-          }}
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Start"
+        screenOptions={{ headerShown: false }}
       >
-        <Marker coordinate={coordinate}>
-          <Callout>
-            <View>
-              <Text style={styles.title}>Hub Salvador</Text>
-              <Text style={styles.address}>Avenida da França</Text>
-            </View>
-          </Callout>
-        </Marker>
-      </Map>
-    </View>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Start" component={Start} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  callout:{
-    padding: 12,
-  },
-  title:{
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-  address:{
-    fontSize: 14,
-  }
-});
