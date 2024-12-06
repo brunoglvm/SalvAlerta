@@ -12,12 +12,7 @@ import {
   ButtonContainer,
 } from "./styles";
 
-// type RootstackParamList = {
-//     Home: undefined;
-//     Start: undefined;
-// };
-
-type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
 type Props = {
   navigation: HomeScreenNavigationProp;
