@@ -1,8 +1,8 @@
-import React from "react";
 import { Button } from "react-native";
 import { Callout, Marker } from "react-native-maps";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "@/utils/types";
+import { darkMapStyle } from "@/styles/mapStyle";
 import {
   Container,
   StyledMap,
@@ -33,6 +33,7 @@ export default function Home({ navigation }: Props) {
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,
         }}
+        customMapStyle={darkMapStyle}
       >
         <Marker coordinate={coordinate}>
           <Callout>

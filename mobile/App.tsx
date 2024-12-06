@@ -1,12 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StatusBar } from "react-native";
 import {
   Inter_400Regular,
   Inter_500Medium,
   Inter_700Bold,
   useFonts,
 } from "@expo-google-fonts/inter";
+
 import Home from "@/screens/Home";
 import Start from "@/screens/Start";
 import { Loading } from "@/components/Loading";
@@ -26,6 +28,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
+      <StatusBar
+        barStyle={"light-content"}
+        backgroundColor="transparent"
+        translucent
+      />
       <Stack.Navigator
         initialRouteName="Start"
         screenOptions={{ headerShown: false }}
