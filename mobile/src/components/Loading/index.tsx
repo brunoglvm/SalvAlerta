@@ -1,5 +1,6 @@
-import { ActivityIndicator, View } from "react-native";
+import LottieView from "lottie-react-native";
 import { colors } from "@/styles/colors";
+import { StatusBar, View } from "react-native";
 
 export function Loading() {
   return (
@@ -11,7 +12,17 @@ export function Loading() {
         backgroundColor: colors.gray[800],
       }}
     >
-      <ActivityIndicator size="large" color={colors.blue[100]} />
+      <StatusBar
+        barStyle={"light-content"}
+        backgroundColor="transparent"
+        translucent
+      />
+      <LottieView
+        source={require("./spinner.json")}
+        autoPlay
+        loop
+        style={{ width: 38, height: 38 }}
+      />
     </View>
   );
 }
