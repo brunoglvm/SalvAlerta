@@ -26,7 +26,7 @@ Para rodar o projeto localmente, você precisará das seguintes ferramentas e ve
 - **Node.js:** 16.x ou superior
 - **npm:** 8.x ou superior / Yarn: 1.x ou superior
 
-## Instalação
+## Rodando o Mobile
 
 Siga os passos abaixo para rodar a aplicação localmente:
 
