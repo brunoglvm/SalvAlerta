@@ -12,8 +12,8 @@ import {
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
 
-import Home from "@/screens/Home";
-import Start from "@/screens/Start";
+import Home from "@/screens/Home/home";
+import Start from "@/screens/Start/start";
 import { Loading } from "@/components/Loading";
 
 import { colors } from "@/styles/colors";
