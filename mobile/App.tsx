@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Ionicons } from "@expo/vector-icons";
 
 import { StatusBar } from "react-native";
 
@@ -17,6 +18,8 @@ import { Loading } from "@/components/Loading";
 
 import { colors } from "@/styles/colors";
 
+import Logo from "@/assets/images/logo.svg";
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -30,7 +33,16 @@ function HomeDrawer() {
           backgroundColor: colors.blue[200],
         },
         headerTintColor: colors.white,
-        headerTitle: "",
+        headerTitleAlign: "center",
+        headerTitle: () => <Logo width={120} height={30} />,
+        headerRight: () => (
+          <Ionicons
+            name="search"
+            size={22}
+            color={colors.white}
+            style={{ marginRight: 12 }}
+          />
+        ),
         drawerStyle: {
           backgroundColor: colors.gray[800],
         },
