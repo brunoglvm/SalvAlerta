@@ -1,10 +1,10 @@
 import React from "react";
-import { Button } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "@/utils/types";
 import { Background, ButtonContainer, LogoContainer } from "./styles";
 
 import Logo from "@/assets/images/logo.svg";
+import { DefaultButton } from "@/components/Buttons";
 
 type StartScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -22,7 +22,10 @@ export default function Start({ navigation }: Props) {
         <Logo width={240} height={60} />
       </LogoContainer>
       <ButtonContainer>
-        <Button title="Test" onPress={() => navigation.navigate("Home")} />
+        <DefaultButton
+          title="Continuar"
+          onPress={() => navigation.navigate("Home")}
+        />
       </ButtonContainer>
     </Background>
   );

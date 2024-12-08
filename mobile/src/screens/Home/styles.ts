@@ -19,11 +19,3 @@ export const Title = styled.Text`
 export const Address = styled.Text`
   font-size: 14px;
 `;
-
-export const ButtonContainer = styled.View`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 58px;
-`;

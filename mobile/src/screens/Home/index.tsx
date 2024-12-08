@@ -1,18 +1,14 @@
-import { Button } from "react-native";
-import { Callout, Marker } from "react-native-maps";
-import { StackNavigationProp } from "@react-navigation/stack";
+import React from "react";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { RootStackParamList } from "@/utils/types";
+import { Container, StyledMap } from "./styles";
+import { Marker } from "react-native-maps";
 import { darkMapStyle } from "@/styles/mapStyle";
-import {
-  Container,
-  StyledMap,
-  CalloutView,
-  Title,
-  Address,
-  ButtonContainer,
-} from "./styles";
 
-type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
+type HomeScreenNavigationProp = DrawerNavigationProp<
+  RootStackParamList,
+  "Home"
+>;
 
 type Props = {
   navigation: HomeScreenNavigationProp;
@@ -35,18 +31,8 @@ export default function Home({ navigation }: Props) {
         }}
         customMapStyle={darkMapStyle}
       >
-        <Marker coordinate={coordinate}>
-          <Callout>
-            <CalloutView>
-              <Title>Hub Salvador</Title>
-              <Address>Avenida da França</Address>
-            </CalloutView>
-          </Callout>
-        </Marker>
+        <Marker coordinate={coordinate} pointerEvents="none" />
       </StyledMap>
-      <ButtonContainer>
-        <Button title="test" onPress={() => navigation.navigate("Start")} />
-      </ButtonContainer>
     </Container>
   );
 }
