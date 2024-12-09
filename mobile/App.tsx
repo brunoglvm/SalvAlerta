@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 import { StatusBar } from "react-native";
 
@@ -17,6 +17,7 @@ import Start from "@/screens/Start/start";
 import { Loading } from "@/components/Loading";
 
 import { colors } from "@/styles/colors";
+import { fontFamily } from "@/styles/fontFamily";
 
 import Logo from "@/assets/images/logo.svg";
 
@@ -47,10 +48,53 @@ function HomeDrawer() {
           backgroundColor: colors.gray[800],
           width: "80%",
         },
+        drawerItemStyle: {
+          backgroundColor: colors.gray[800],
+        },
+        drawerLabelStyle: {
+          fontFamily: fontFamily.interReg,
+          color: colors.white,
+        },
         drawerType: "slide",
       }}
     >
-      <Drawer.Screen name="HomeScreen" component={Home} />
+      <Drawer.Screen
+        name="Home"
+        component={Home}
+        options={{
+          drawerItemStyle: { display: "none" },
+        }}
+      />
+      <Drawer.Screen
+        name="Profile"
+        component={Home}
+        options={{
+          drawerLabel: "Perfil",
+          drawerIcon: () => (
+            <MaterialIcons name="person" size={26} color={colors.white} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Settings"
+        component={Home}
+        options={{
+          drawerLabel: "Configurações",
+          drawerIcon: () => (
+            <MaterialIcons name="settings" size={26} color={colors.white} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="FAQ"
+        component={Home}
+        options={{
+          drawerLabel: "FAQ",
+          drawerIcon: () => (
+            <MaterialIcons name="help" size={26} color={colors.white} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
