@@ -3,6 +3,7 @@ import Octicons from '@expo/vector-icons/Octicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Entypo from '@expo/vector-icons/Entypo';
+import {colors} from "@/styles/colors";
 
 type ButtonProps = {
   title?: string;
@@ -52,7 +53,7 @@ export const LateralButtonLocal = ({onPress }: ButtonProps) => {
 export const AlertButton = ({onPress }: ButtonProps) => {
   return(
       <StyledAlertButton>
-          <Octicons name="alert" size={50} color="yellow" />
+          <Octicons name="alert" size={45} color={colors.yellow}/>
       </StyledAlertButton>
   );
 };

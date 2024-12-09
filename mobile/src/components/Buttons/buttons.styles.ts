@@ -32,8 +32,8 @@ export const LateralButton = styled.TouchableOpacity.attrs({activeOpacity: 0.6,}
 `;
 
 export const StyledAlertButton = styled.TouchableOpacity.attrs({activeOpacity: 0.6})`
-  width: 85px;
-  height: 85px;
+  width: 75px;
+  height: 75px;
   border-radius: 50px;
   background-color: ${colors.red};
   align-items: center;
