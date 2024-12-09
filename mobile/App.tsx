@@ -45,6 +45,7 @@ function HomeDrawer() {
         ),
         drawerStyle: {
           backgroundColor: colors.gray[800],
+          width: 280,
         },
         drawerType: "slide",
       }}
