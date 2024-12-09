@@ -31,5 +31,14 @@ export const LateralButtonsContainer = styled.View`
 
 export const LateralButtonWrapper = styled.View`
     margin-bottom: 10px;
+`;
+
+export const AlertButtonContainer = styled.View`
+    position: absolute;
+    justify-content: center;
+    flex: 1;
+    bottom: 15%;
+    left: 40%;
+    
 `
 

@@ -4,8 +4,8 @@ import { RootStackParamList } from "@/utils/types";
 import { Container, StyledMap } from "./home.styles";
 import { Marker } from "react-native-maps";
 import { darkMapStyle } from "@/styles/mapStyle";
-import { LateralButtonsContainer, LateralButtonWrapper } from "./home.styles";
-import {LateralButtonSignal, LateralButtonForum, LateralButtonInfo, LateralButtonLocal} from "@/components/Buttons/buttons";
+import { LateralButtonsContainer, LateralButtonWrapper, AlertButtonContainer } from "./home.styles";
+import {LateralButtonSignal, LateralButtonForum, LateralButtonInfo, LateralButtonLocal, AlertButton} from "@/components/Buttons/buttons";
 
 type HomeScreenNavigationProp = DrawerNavigationProp<
   RootStackParamList,
@@ -53,6 +53,10 @@ export default function Home({ navigation }: Props) {
                 <LateralButtonLocal onPress={() => {}}/>
             </LateralButtonWrapper>
         </LateralButtonsContainer>
+
+        <AlertButtonContainer>
+            <AlertButton/>
+        </AlertButtonContainer>
     </Container>
   );
 }

@@ -20,7 +20,7 @@ export const ButtonText = styled.Text`
   font-size: 18px;
 `;
 
-export const LateralButtonContainer = styled.TouchableOpacity.attrs({activeOpacity: 0.6,})`
+export const LateralButton = styled.TouchableOpacity.attrs({activeOpacity: 0.6,})`
   width: 52px;
   height: 52px;
   border-radius: 35px;
@@ -29,4 +29,15 @@ export const LateralButtonContainer = styled.TouchableOpacity.attrs({activeOpaci
   align-items: center;
   justify-content: center;
   position: absolute;
-`
+`;
+
+export const StyledAlertButton = styled.TouchableOpacity.attrs({activeOpacity: 0.6})`
+  width: 85px;
+  height: 85px;
+  border-radius: 50px;
+  background-color: ${colors.red};
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: 2px solid white;
+`;
