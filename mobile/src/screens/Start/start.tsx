@@ -1,4 +1,3 @@
-import React from "react";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "@/utils/types";
 import { Background, ButtonContainer, LogoContainer } from "./start.styles";

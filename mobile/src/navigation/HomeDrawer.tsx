@@ -2,8 +2,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 import Home from "@/screens/Home/home";
-import { colors } from "@/styles/colors";
-import { fontFamily } from "@/styles/fontFamily";
+import { colors, fontFamily } from "@/styles/theme";
 import Logo from "@/assets/images/logo.svg";
 
 const Drawer = createDrawerNavigator();

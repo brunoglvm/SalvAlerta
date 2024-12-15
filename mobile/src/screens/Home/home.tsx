@@ -1,11 +1,24 @@
 import React from "react";
-import { DrawerNavigationProp } from "@react-navigation/drawer";
-import { RootStackParamList } from "@/utils/types";
-import { Container, StyledMap } from "./home.styles";
 import { Marker } from "react-native-maps";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
+
+import { RootStackParamList } from "@/utils/types";
 import { darkMapStyle } from "@/styles/mapStyle";
-import { LateralButtonsContainer, LateralButtonWrapper, AlertButtonContainer } from "./home.styles";
-import {LateralButtonSignal, LateralButtonForum, LateralButtonInfo, LateralButtonLocal, AlertButton} from "@/components/Buttons/buttons";
+import {
+  LateralButtonSignal,
+  LateralButtonForum,
+  LateralButtonInfo,
+  LateralButtonLocal,
+  AlertButton,
+} from "@/components/Buttons/buttons";
+
+import {
+  Container,
+  StyledMap,
+  LateralButtonsContainer,
+  LateralButtonWrapper,
+  AlertButtonContainer,
+} from "./home.styles";
 
 type HomeScreenNavigationProp = DrawerNavigationProp<
   RootStackParamList,
@@ -36,27 +49,27 @@ export default function Home({ navigation }: Props) {
         <Marker coordinate={coordinate} pointerEvents="none" />
       </StyledMap>
 
-        <LateralButtonsContainer>
-            <LateralButtonWrapper>
-                <LateralButtonSignal onPress={() => {}}/>
-            </LateralButtonWrapper>
+      <LateralButtonsContainer>
+        <LateralButtonWrapper>
+          <LateralButtonSignal onPress={() => {}} />
+        </LateralButtonWrapper>
 
-            <LateralButtonWrapper>
-                <LateralButtonForum onPress={() =>{}}/>
-            </LateralButtonWrapper>
+        <LateralButtonWrapper>
+          <LateralButtonForum onPress={() => {}} />
+        </LateralButtonWrapper>
 
-            <LateralButtonWrapper>
-                <LateralButtonInfo onPress={() => {}}/>
-            </LateralButtonWrapper>
+        <LateralButtonWrapper>
+          <LateralButtonInfo onPress={() => {}} />
+        </LateralButtonWrapper>
 
-            <LateralButtonWrapper>
-                <LateralButtonLocal onPress={() => {}}/>
-            </LateralButtonWrapper>
-        </LateralButtonsContainer>
+        <LateralButtonWrapper>
+          <LateralButtonLocal onPress={() => {}} />
+        </LateralButtonWrapper>
+      </LateralButtonsContainer>
 
-        <AlertButtonContainer>
-            <AlertButton/>
-        </AlertButtonContainer>
+      <AlertButtonContainer>
+        <AlertButton />
+      </AlertButtonContainer>
     </Container>
   );
 }

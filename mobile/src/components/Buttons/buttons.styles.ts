@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
-import { colors } from "@/styles/colors";
-import { fontFamily } from "@/styles/fontFamily";
+import { colors, fontFamily } from "@/styles/theme";
 
 export const ButtonContainer = styled.TouchableOpacity.attrs({
   activeOpacity: 0.9,

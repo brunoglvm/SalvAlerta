@@ -1,5 +1,5 @@
 import LottieView from "lottie-react-native";
-import { colors } from "@/styles/colors";
+import { colors } from "@/styles/theme";
 import { StatusBar, View } from "react-native";
 
 export function Loading() {
