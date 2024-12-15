@@ -4,13 +4,9 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 import { RootStackParamList } from "@/utils/types";
 import { darkMapStyle } from "@/styles/mapStyle";
-import {
-  LateralButtonSignal,
-  LateralButtonForum,
-  LateralButtonInfo,
-  LateralButtonLocal,
-  AlertButton,
-} from "@/components/Buttons/buttons";
+import { AlertButton, LateralButton } from "@/components/Buttons/buttons";
+
+import { colors } from "@/styles/theme";
 
 import {
   Container,
@@ -51,19 +47,40 @@ export default function Home({ navigation }: Props) {
 
       <LateralButtonsContainer>
         <LateralButtonWrapper>
-          <LateralButtonSignal onPress={() => {}} />
+          <LateralButton
+            iconName="broadcast"
+            iconLibrary="Octicons"
+            iconColor={colors.black}
+            iconSize={30}
+            onPress={() => {}}
+          />
         </LateralButtonWrapper>
-
         <LateralButtonWrapper>
-          <LateralButtonForum onPress={() => {}} />
+          <LateralButton
+            iconName="chat-bubble-outline"
+            iconLibrary="MaterialIcons"
+            iconColor={colors.black}
+            iconSize={30}
+            onPress={() => {}}
+          />
         </LateralButtonWrapper>
-
         <LateralButtonWrapper>
-          <LateralButtonInfo onPress={() => {}} />
+          <LateralButton
+            iconName="information-variant"
+            iconLibrary="MaterialCommunityIcons"
+            iconColor={colors.black}
+            iconSize={30}
+            onPress={() => {}}
+          />
         </LateralButtonWrapper>
-
         <LateralButtonWrapper>
-          <LateralButtonLocal onPress={() => {}} />
+          <LateralButton
+            iconName="location-pin"
+            iconLibrary="Entypo"
+            iconColor={colors.black}
+            iconSize={30}
+            onPress={() => {}}
+          />
         </LateralButtonWrapper>
       </LateralButtonsContainer>
 

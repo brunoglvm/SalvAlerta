@@ -1,13 +1,39 @@
-import {ButtonContainer, ButtonText, LateralButton, StyledAlertButton} from "./buttons.styles"
-import Octicons from '@expo/vector-icons/Octicons';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import Entypo from '@expo/vector-icons/Entypo';
-import {colors} from "@/styles/colors";
+import Octicons from "@expo/vector-icons/Octicons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import Entypo from "@expo/vector-icons/Entypo";
+
+import { colors } from "@/styles/colors";
+
+import {
+  ButtonContainer,
+  ButtonText,
+  LateralButtonContainer,
+  StyledAlertButton,
+} from "./buttons.styles";
 
 type ButtonProps = {
   title?: string;
   onPress?: () => void;
+};
+
+type IconButtonProps = {
+  iconName: any;
+  iconLibrary:
+    | "Octicons"
+    | "MaterialIcons"
+    | "MaterialCommunityIcons"
+    | "Entypo";
+  iconSize?: number;
+  iconColor?: string;
+  onPress?: () => void;
+};
+
+const IconMapper = {
+  Octicons,
+  MaterialIcons,
+  MaterialCommunityIcons,
+  Entypo,
 };
 
 export function DefaultButton({ title, onPress }: ButtonProps) {
@@ -18,42 +44,26 @@ export function DefaultButton({ title, onPress }: ButtonProps) {
   );
 }
 
-export const LateralButtonSignal = ({onPress }: ButtonProps) => {
+export const LateralButton = ({
+  iconName,
+  iconLibrary,
+  iconSize = 30,
+  iconColor = "black",
+  onPress,
+}: IconButtonProps) => {
+  const IconComponent = IconMapper[iconLibrary];
+
   return (
-      <LateralButton onPress={onPress}>
-        <Octicons name="broadcast" size={30} color="black" />
-      </LateralButton>
+    <LateralButtonContainer onPress={onPress}>
+      <IconComponent name={iconName} size={iconSize} color={iconColor} />
+    </LateralButtonContainer>
   );
 };
 
-export const LateralButtonForum = ({onPress }: ButtonProps) => {
-    return (
-        <LateralButton>
-            <MaterialIcons name="chat-bubble-outline" size={30} color="black" />
-        </LateralButton>
-    );
-};
-
-export const LateralButtonInfo = ({onPress }: ButtonProps) => {
+export const AlertButton = ({ onPress }: ButtonProps) => {
   return (
-      <LateralButton>
-          <MaterialCommunityIcons name="information-variant" size={30} color="black" />
-      </LateralButton>
-  );
-};
-
-export const LateralButtonLocal = ({onPress }: ButtonProps) => {
-  return (
-      <LateralButton>
-          <Entypo name="location-pin" size={30} color="black" />
-      </LateralButton>
-  );
-};
-
-export const AlertButton = ({onPress }: ButtonProps) => {
-  return(
-      <StyledAlertButton>
-          <Octicons name="alert" size={45} color={colors.yellow}/>
-      </StyledAlertButton>
+    <StyledAlertButton onPress={onPress}>
+      <Octicons name="alert" size={45} color={colors.yellow} />
+    </StyledAlertButton>
   );
 };

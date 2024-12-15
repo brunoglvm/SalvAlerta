@@ -19,13 +19,13 @@ export const ButtonText = styled.Text`
   font-size: 18px;
 `;
 
-export const LateralButton = styled.TouchableOpacity.attrs({
+export const LateralButtonContainer = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6,
 })`
   width: 52px;
   height: 52px;
   border-radius: 35px;
-  background-color: gray;
+  background-color: ${colors.gray[300]};
   opacity: 0.8;
   align-items: center;
   justify-content: center;
