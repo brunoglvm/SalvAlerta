@@ -4,6 +4,7 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import Home from "@/screens/Home/home";
 import { colors, fontFamily } from "@/styles/theme";
 import Logo from "@/assets/images/logo.svg";
+import Details from "@/screens/Profile/Details/details";
 
 const Drawer = createDrawerNavigator();
 
@@ -34,7 +35,7 @@ export function HomeDrawer() {
           backgroundColor: colors.gray[800],
         },
         drawerLabelStyle: {
-          fontFamily: fontFamily.interReg,
+          fontFamily: fontFamily.interMd,
           color: colors.white,
         },
         drawerType: "slide",
@@ -49,9 +50,10 @@ export function HomeDrawer() {
       />
       <Drawer.Screen
         name="ProfileScreen"
-        component={Home}
+        component={Details}
         options={{
           drawerLabel: "Perfil",
+          headerShown: false,
           drawerIcon: () => (
             <MaterialIcons name="person" size={26} color={colors.white} />
           ),
@@ -62,6 +64,7 @@ export function HomeDrawer() {
         component={Home}
         options={{
           drawerLabel: "Configurações",
+          headerShown: false,
           drawerIcon: () => (
             <MaterialIcons name="settings" size={26} color={colors.white} />
           ),

@@ -15,6 +15,7 @@ import {
   LateralButtonWrapper,
   AlertButtonContainer,
 } from "./home.styles";
+import { StatusBar } from "react-native";
 
 type HomeScreenNavigationProp = DrawerNavigationProp<
   RootStackParamList,
@@ -25,7 +26,7 @@ type Props = {
   navigation: HomeScreenNavigationProp;
 };
 
-const coordinate = {
+const currentLocation = {
   latitude: -12.969717954906338,
   longitude: -38.51277131734317,
 };
@@ -33,16 +34,21 @@ const coordinate = {
 export default function Home({ navigation }: Props) {
   return (
     <Container>
+      <StatusBar backgroundColor="rgba(14, 16, 19, 0.2)" />
       <StyledMap
         initialRegion={{
-          latitude: coordinate.latitude,
-          longitude: coordinate.longitude,
-          latitudeDelta: 0.005,
-          longitudeDelta: 0.005,
+          latitude: currentLocation.latitude,
+          longitude: currentLocation.longitude,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
         }}
         customMapStyle={darkMapStyle}
       >
-        <Marker coordinate={coordinate} pointerEvents="none" />
+        <Marker
+          coordinate={currentLocation}
+          pointerEvents="none"
+          image={require("@/assets/images/pin.png")}
+        />
       </StyledMap>
 
       <LateralButtonsContainer>

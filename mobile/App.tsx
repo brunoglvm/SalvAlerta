@@ -29,7 +29,7 @@ export default function App() {
     <NavigationContainer>
       <StatusBar
         barStyle={"light-content"}
-        backgroundColor="rgba(0, 0, 0, 0.2)"
+        backgroundColor="transparent"
         translucent
       />
       <Stack.Navigator
