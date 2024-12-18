@@ -3,12 +3,12 @@ import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
 
 import {
-  AvatarButton,
   Container,
-  StyledIconContainer,
+  AvatarButton,
   UserAvatar,
-  UserInfo,
+  IconContainer,
   UserName,
+  UserInfo,
 } from "@/screens/Profile/Details/details.styles";
 
 import { colors } from "@/styles/theme";
@@ -35,16 +35,16 @@ export default function Details() {
         {image ? (
           <UserAvatar source={{ uri: image }} />
         ) : (
-          <StyledIconContainer>
+          <IconContainer>
             <Ionicons name="person" size={140} color={colors.gray[300]} />
-          </StyledIconContainer>
+          </IconContainer>
         )}
       </AvatarButton>
 
-      <UserName>Nome Completo</UserName>
-      <UserInfo>email@email.com</UserInfo>
-      <UserInfo>(71) 91234-5678</UserInfo>
-      <UserInfo>Região: Bairro da Paz</UserInfo>
+      <UserName>{`{Nome Completo}`}</UserName>
+      <UserInfo>{`{email@email.com}`}</UserInfo>
+      <UserInfo>{`{(71) 91234-5678}`}</UserInfo>
+      <UserInfo>{`{Região: Bairro da Paz}`}</UserInfo>
     </Container>
   );
 }

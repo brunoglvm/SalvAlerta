@@ -10,7 +10,7 @@ import {
 
 import { Loading } from "@/components/Loading";
 import Start from "@/screens/Start/start";
-import { HomeDrawer } from "@/navigation/HomeDrawer";
+import { HomeDrawer } from "@/navigation/home-drawer";
 
 const Stack = createNativeStackNavigator();
 

@@ -35,7 +35,7 @@ export const UserInfo = styled.Text`
   margin-top: 4px;
 `;
 
-export const StyledIconContainer = styled.View`
+export const IconContainer = styled.View`
   width: 140px;
   height: 140px;
   border-radius: 70px;
